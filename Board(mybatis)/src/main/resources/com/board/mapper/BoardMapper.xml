@@ -10,5 +10,13 @@
         insert into board2(title, content, writer) values (#{title}, #{content}, #{writer})
         
     </insert>
+    
+    <!-- 게시판 목록 -->
+    <select id="getList" resultType="com.board.model.BoardVO">
+    
+        select * from board2
+        order by bno desc;
+    
+    </select>
 
 </mapper>

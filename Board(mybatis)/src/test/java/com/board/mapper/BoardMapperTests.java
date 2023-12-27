@@ -1,5 +1,7 @@
 package com.board.mapper;
 
+import java.util.List;
+
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.slf4j.Logger;
@@ -21,6 +23,7 @@ public class BoardMapperTests {
 	@Autowired
 	private BoardMapper mapper;
 	
+//	게시판 등록 테스트
 	@Test
     public void testEnroll() {
         
@@ -30,8 +33,19 @@ public class BoardMapperTests {
         vo.setContent("mapper test");
         vo.setWriter("mapper test");
         
-        mapper.enroll(vo);
-        
+        mapper.enroll(vo);  
     }
 
+//	게시판 목록 테스트
+	@Test()
+	public void testGetList() {
+		
+		List<BoardVO> list = mapper.getList();
+		
+//		for (Object a : list) {
+//			log.info("list : " + a);
+//		}
+		
+		list.forEach(board -> log.info(""+ board));
+	}
 }
