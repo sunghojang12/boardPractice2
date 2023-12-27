@@ -13,7 +13,7 @@
 
 <div class="container">
 <a href="/board/enroll"><button class="btn btn-default">게시판 등록</button></a>
-  <h2>게시판 조회</h2>        
+  <h2>게시판 목록</h2>        
   <table class="table table-hover">
     <thead>
       <tr>
@@ -22,6 +22,7 @@
         <th>작성자</th>
         <th>작성일</th>
         <th>수정일</th>
+        <th>게시물 삭제</th>
       </tr>
     </thead>
     <tbody>
@@ -31,7 +32,8 @@
         <td><a  href='/board/get?bno=<c:out value="${list.bno}"/>'><c:out value="${list.title}"/></a></td>
         <td><c:out value="${list.writer}"/></td>
         <td><fmt:formatDate type="both" dateStyle="short" timeStyle="short" value="${list.regdate}"/></td>
-        <td style="color:green"><fmt:formatDate type="both" dateStyle="short" timeStyle="short" value="${list.updateDate}"/></td>
+        <td><fmt:formatDate type="both" dateStyle="short" timeStyle="short" value="${list.updateDate}"/></td>
+        <td><a href="/board/delete?bno=${list.bno}"><button class="btn btn-danger">삭제</button></a></td>
       </tr>   
     </c:forEach>
     </tbody>
@@ -59,6 +61,9 @@
 	            alert("수정이 완료되었습니다.");
 	        }
 	        
+	        if(result === "delete success"){
+	            alert("삭제 되었습니다.");
+	        }
 	    }    
 	    
 	});
