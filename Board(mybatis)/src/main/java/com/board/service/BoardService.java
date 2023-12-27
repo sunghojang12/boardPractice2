@@ -11,4 +11,7 @@ public interface BoardService {
     
     /* 게시판 목록 */
     public List<BoardVO> getList();
+    
+    /* 게시판 상세화면 */
+    public BoardVO getDetail(int bno);
 }

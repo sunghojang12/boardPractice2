@@ -28,7 +28,7 @@
     <c:forEach items="${list}" var="list">
       <tr>
         <td><c:out value="${list.bno}"/></td>
-        <td><c:out value="${list.title}"/></td>
+        <td><a  href='/board/get?bno=<c:out value="${list.bno}"/>'><c:out value="${list.title}"/></a></td>
         <td><c:out value="${list.writer}"/></td>
         <td><fmt:formatDate type="both" dateStyle="short" timeStyle="short" value="${list.regdate}"/></td>
         <td style="color:green"><fmt:formatDate type="both" dateStyle="short" timeStyle="short" value="${list.updateDate}"/></td>

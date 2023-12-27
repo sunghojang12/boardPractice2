@@ -38,4 +38,10 @@ public class BoardServiceTests {
 		
 		list.forEach(board -> log.info(""+board));
 	}
+	/* 게시판 상세 조회 */
+	@Test
+	public void testGetDetail() {
+		
+		log.info("" + service.getDetail(5));
+	}
 }

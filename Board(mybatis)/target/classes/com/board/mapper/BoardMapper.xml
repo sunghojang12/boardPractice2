@@ -7,16 +7,31 @@
 	<!-- 게시판 등록 -->
     <insert id="enroll">
         
-        insert into board2(title, content, writer) values (#{title}, #{content}, #{writer})
+        insert into board2
+        	(title, content, writer) 
+        values 
+        	(#{title}, #{content}, #{writer})
         
     </insert>
     
     <!-- 게시판 목록 -->
     <select id="getList" resultType="com.board.model.BoardVO">
     
-        select * from board2
+        select 
+        	* 
+        from board2
         order by bno desc;
     
+    </select>
+    
+    <!-- 게시판 상세조회 -->
+    <select id="getDetail" resultType="com.board.model.BoardVO">
+    	
+    	select 
+    		*
+    	from board2
+    	where
+    		bno = #{bno}
     </select>
 
 </mapper>
