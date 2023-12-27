@@ -32,7 +32,7 @@
         <td><c:out value="${list.writer}"/></td>
         <td><fmt:formatDate type="both" dateStyle="short" timeStyle="short" value="${list.regdate}"/></td>
         <td style="color:green"><fmt:formatDate type="both" dateStyle="short" timeStyle="short" value="${list.updateDate}"/></td>
-      </tr>
+      </tr>   
     </c:forEach>
     </tbody>
   </table>
