@@ -23,7 +23,7 @@ public class BoardMapperTests {
 	@Autowired
 	private BoardMapper mapper;
 	
-//	게시판 등록 테스트
+	/* 게시판 등록 테스트 */
 	@Test
     public void testEnroll() {
         
@@ -36,7 +36,7 @@ public class BoardMapperTests {
         mapper.enroll(vo);  
     }
 
-//	게시판 목록 테스트
+	/* 게시판 목록 테스트 */
 	@Test()
 	public void testGetList() {
 		
@@ -49,11 +49,24 @@ public class BoardMapperTests {
 		list.forEach(board -> log.info(""+ board));
 	}
 	
-//	게시판 상세 조회
+	/* 게시판 상세 조회 */
 	@Test()
 	public void testGetDetail() {
 		
 		BoardVO vo = mapper.getDetail(5);
 		log.info("" + vo);
 	}
+	/* 게시판 수정 */
+    @Test
+    public void testModify() {
+        
+        BoardVO board = new BoardVO();
+        board.setBno(8);
+        board.setTitle("수정 제목");
+        board.setContent("수정 내용");
+        
+        int result = mapper.modify(board);
+        log.info("result : " +result);
+        
+    }
 }

@@ -14,4 +14,7 @@ public interface BoardService {
     
     /* 게시판 상세화면 */
     public BoardVO getDetail(int bno);
+    
+    /* 게시판 수정 */
+    public int modify(BoardVO board);
 }

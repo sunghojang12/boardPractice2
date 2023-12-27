@@ -33,5 +33,17 @@
     	where
     		bno = #{bno}
     </select>
+    
+    <!-- 수정화면 -->
+    <update id="modify">
+    	
+    	update board2
+    	set
+    		title = #{title},
+    		content = #{content},
+    		updatedate = now()
+    	where 
+    		bno = #{bno}
+    </update>
 
 </mapper>

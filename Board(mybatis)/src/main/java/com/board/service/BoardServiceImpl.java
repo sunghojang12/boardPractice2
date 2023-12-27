@@ -30,5 +30,10 @@ public class BoardServiceImpl implements BoardService{
 		
 		return mapper.getDetail(bno);
 	}
+	@Override
+	public int modify(BoardVO board) {
+		
+		return mapper.modify(board);
+	}
 	
 }
